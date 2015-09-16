@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 Graphic</title>
+
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="../d3/base.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <ul>
+      <% candidateReceipts.forEach(function(e){ %>
+       <li>Receipts:<%=e.receipts%></li>
+      <% }); %>
+    </ul>
+
+    <h2>D3 Graphic</h2>
+    <section id="chart">
+      <div id="clinton" class="candidate">Hillary Clinton</div>
+      <div id="omalley" class="candidate">Martin O'Malley</div>
+      <div id="sanders" class="candidate">Bernie Sanders</div>
+      <div id="bush" class="candidate">Jeb Bush</div>
+      <div id="carson" class="candidate">Ben Carson</div>
+      <div id="cruz" class="candidate">Ted Cruz</div>
+      <div id="fiorina" class="candidate">Carly Fiorina</div>
+      <div id="graham" class="candidate">Lindsey Graham</div>
+      <div id="huckabee" class="candidate">Mike Huckabee</div>
+      <div id="jindal" class="candidate">Donald Trump</div>
+      <div id="paul" class="candidate">Bobby Jindal</div>
+      <div id="rubio" class="candidate">Rand Paul</div>
+      <div id="santorum" class="candidate">Marco Rubio</div>
+      <div id="trump" class="candidate">Rick Santorum</div>
+  </section>
+  </div>
+  <script src="../d3/d3.min.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

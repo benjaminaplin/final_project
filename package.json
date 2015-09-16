@@ -1,7 +1,6 @@
 {
   "name": "final_project",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/benjaminaplin/final_project.git"
   },
-  "author": "",
+  "author": "Benjamin Aplin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/benjaminaplin/final_project/issues"
@@ -24,5 +23,6 @@
     "path": "^0.12.7",
     "request": "^2.62.0",
     "views": "^1.0.2"
-  }
+  },
+  "description": ""
 }
