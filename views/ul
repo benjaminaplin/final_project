@@ -1,0 +1,3 @@
+      <% receipts.forEach(function(e){ %>
+       <li>Receipts:<%=e.receipts%></li>
+      <% }); %>
