@@ -75,7 +75,8 @@ var CandidateView = Backbone.View.extend({
   initialize: function(){
     this.listenTo(this.model, "change", this.render);
   },
-  tagName: 'li',
+  tagName: 'li', 
+  template: _.template($("#main-template").text()),
 
   render: function(){
     console.log('fired render')
@@ -97,8 +98,7 @@ var CandidateCollectionView = Backbone.View.extend({
   el: $('#chart'),
   initialize: function(){
     this.listenTo(this.collection, 'change', this.render);
-  },  
-  template: _.template($("#main-template").text())
+  }
 });
 
 var candidates = new CandidateCollection({});
