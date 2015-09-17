@@ -1,19 +1,27 @@
 console.log("backbone linked");
-
-$(function(){
-
+var candidatesArray = []
+var CandidateApp = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Data: {
+    candidatesArray:[]
+  }
+  //decide what i want to store: global variables, models, views, collecitons
+};
 //------------CANDIDATE-COLLECTION-VIEW------------------------------
 
-var Candidate = Backbone.Model.extend({
-  url: '/candidates'
+CandidateApp.Models.Candidate = Backbone.Model.extend({
+  url: '/candidates',
 })
 
 //------------CANDIDATE-COLLECTION------------------------------
 
-var CandidateCollection = Backbone.Collection.extend({
-  model: Candidate,
+CandidateApp.Collections.CandidateCollection = Backbone.Collection.extend({
+  model: CandidateApp.Models.Candidate,
   url: '/candidates',
   apiCall: function(){
+    var that = this;
     var candidates = [
       // 'chafee': {},
       {'name':'Clinton', 'candId': 'P00003392', 'commId': 'C00575795'},
@@ -39,26 +47,26 @@ var CandidateCollection = Backbone.Collection.extend({
       {'name':'Trump','candId': 'P80001571', 'commId': 'C00580100' },
       // {'name':'walker','candId': 'P60006046', 'commId': 'C00580480'}
   ]
-    console.log('fired api call')
-
     candidates.forEach(function(e){
       var commId = e.commId;
       $.ajax({
-        url: 'https://api.open.fec.gov/v1/committee/' + commId + '/totals/?api_key=w9zQ9pt9PNe6et305JsAtxiNQvhygjQC8yrCMMc8&page=1&per_page=20&sort_nulls_large=true&sort=-cycle',
+        url: 'https://api.open.fec.gov/v1/committee/' + commId + '/totals/?api_key=vEAnpDMm3fLd0ZT4eVb2ULbrVlOJ4XvQA50txDkG&page=1&per_page=20&sort_nulls_large=true&sort=-cycle',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
-          // console.log(data);//set each attribute that we need 
+          //set each attribute that we need 
+          // console.log(data)
           //create instances of each candidate model and view, render the view
-          var newCandidate = new Candidate({
+          var newCandidate = new CandidateApp.Models.Candidate({
             receipts: data.results[0].receipts,
             commId: data.results[0].committee_id,
             candContr: data.results[0].candidate_contribution,
             candSpent: data.results[0].disbursements
           });
-          var newCandidateView = new CandidateView({model: newCandidate});
-          // console.log(newCandidateView)
-          newCandidateView.render();
+            
+          var newCandidateView = new CandidateApp.Views.CandidateView({model: newCandidate});
+
+          that.add(newCandidate);
         },
         error: function(error) {
           console.log(error);
@@ -71,7 +79,7 @@ var CandidateCollection = Backbone.Collection.extend({
 
 //------------CANDIDATE-VIEW------------------------------------
  
-var CandidateView = Backbone.View.extend({
+CandidateApp.Views.CandidateView = Backbone.View.extend({
   initialize: function(){
     this.listenTo(this.model, "change", this.render);
   },
@@ -79,36 +87,38 @@ var CandidateView = Backbone.View.extend({
   template: _.template($("#main-template").text()),
 
   render: function(){
-    console.log('fired render')
-    console.log('this.collection ', this.template(this.collection));
-    console.log('this $el', this.$el);
+
     var renderedHTML = this.$el.html(this.template(this.model.attributes));
-    console.log('renderdhtml:', renderedHTML);
     this.$el.html(renderedHTML);
 
     $("#candidates").append(this.$el)
   }
-
 });
 
 //------------CANDIDATE-COLLECTION-VIEW------------------------------------
 
-var CandidateCollectionView = Backbone.View.extend({
+CandidateApp.Views.CandidateCollectionView = Backbone.View.extend({
   //render candidate view and append to .this (self) here and append 
   el: $('#chart'),
   initialize: function(){
-    this.listenTo(this.collection, 'change', this.render);
+    this.listenTo(this.collection, 'add', this.populateArray)
+    // this.populateArray()
+  },
+  populateArray: function(model){
+    // debugger
+    candidatesArray.push(model.attributes)
+    // console.log(candidatesArray)
+    console.log("hello")
   }
 });
 
-var candidates = new CandidateCollection({});
+var candidates = new CandidateApp.Collections.CandidateCollection({});
+var candidateCollectionView = new CandidateApp.Views.CandidateCollectionView({collection: candidates})
 candidates.apiCall();
-var candidateCollectionView = new CandidateCollectionView({collection: candidates})
-candidateCollectionView.render();
+
+ // console.log('need it here', candidatesArray)
 
 
 
+var ben = "hello"
 
-
-
-});//page ready load function end
