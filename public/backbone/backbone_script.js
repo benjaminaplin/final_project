@@ -1,6 +1,5 @@
 console.log("backbone linked");
 
-
 $(function(){
 
 //------------CANDIDATE-COLLECTION-VIEW------------------------------
@@ -58,7 +57,7 @@ var CandidateCollection = Backbone.Collection.extend({
             candSpent: data.results[0].disbursements
           });
           var newCandidateView = new CandidateView({model: newCandidate});
-          console.log(newCandidate)
+          // console.log(newCandidateView)
           newCandidateView.render();
         },
         error: function(error) {
@@ -66,7 +65,7 @@ var CandidateCollection = Backbone.Collection.extend({
           console.log('err')
         }
        })//$ajax
-    })//loop
+    })//end loop
   }
 });
 
@@ -76,15 +75,19 @@ var CandidateView = Backbone.View.extend({
   initialize: function(){
     this.listenTo(this.model, "change", this.render);
   },
-  template: _.template($("#main-template").text()),
   tagName: 'li',
+
   render: function(){
-    this.$el.html(this.template(this.model.attributes));
-    return this;
+    console.log('fired render')
+    console.log('this.collection ', this.template(this.collection));
+    console.log('this $el', this.$el);
+    var renderedHTML = this.$el.html(this.template(this.model.attributes));
+    console.log('renderdhtml:', renderedHTML);
+    this.$el.html(renderedHTML);
+
+    $("#candidates").append(this.$el)
   }
-//re render the candidate view
-//list item 
-//
+
 });
 
 //------------CANDIDATE-COLLECTION-VIEW------------------------------------
@@ -93,13 +96,15 @@ var CandidateCollectionView = Backbone.View.extend({
   //render candidate view and append to .this (self) here and append 
   el: $('#chart'),
   initialize: function(){
-    this.listenTo(this.collection, 'add', this.addOne);
-  }
+    this.listenTo(this.collection, 'change', this.render);
+  },  
+  template: _.template($("#main-template").text())
 });
 
 var candidates = new CandidateCollection({});
 candidates.apiCall();
 var candidateCollectionView = new CandidateCollectionView({collection: candidates})
+candidateCollectionView.render();
 
 
 
