@@ -37,27 +37,5 @@ app.get('/', function(req,res){
     res.send(rendered);
 })
 
-// app.get('/candidate', function(req, res){ 
-//   var candidateReceiptsArr = [];
-
-//   candidates.forEach(function(e,i,a){ 
-//     var commId = e.commId;
-//     var key = 'w9zQ9pt9PNe6et305JsAtxiNQvhygjQC8yrCMMc8';
-
-//     var requestTotalUrl = 'https://api.open.fec.gov/v1/committee/'+ commId +'/totals/?api_key='+ key +'&page=1&per_page=20&sort_nulls_large=true&sort=-cycle';
-//     request.get(requestTotalUrl, function(err, response, body){
-//       var parsedJSON = JSON.parse(body);
-//       var candidateReceipts = parsedJSON.results[0];
-//       candidateReceiptsArr.push(candidateReceipts)
-//       // console.log(candidateReceipts)
-//       // console.log(e.commId, myParsedData.results[0].receipts)
-//       });
-//     console.log(candidateReceiptsArr);
-//   });
-//     // var html = fs.readFileSync('./views/index.html.ejs', 'utf8');
-//     // var rendered = ejs.render(html, {candidateReceipts:candidateReceipts});
-//     // res.send(rendered);
-
-// });
 
 
