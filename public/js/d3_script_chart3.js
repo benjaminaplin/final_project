@@ -346,6 +346,299 @@ var cruzTopContrIndustry = [
     }
 ]
 
+var santorumTopContrIndustry = [
+    {
+        "count": "3566",
+        "value": "1540442.00",
+        "id": "b21467ae32924f84ada9076535401a91",
+        "should_show_entity": false,
+        "label": "RETIRED"
+    },
+    {
+        "count": "883",
+        "value": "440144.00",
+        "id": "767c434bfd1348638bab7f8c12b9282f",
+        "should_show_entity": true,
+        "label": "REPUBLICAN/CONSERVATIVE"
+    },
+    {
+        "count": "733",
+        "value": "367555.00",
+        "id": "a05a0d06f6814b31bece35a81fcb40c7",
+        "should_show_entity": true,
+        "label": "HEALTH PROFESSIONALS"
+    },
+    {
+        "count": "400",
+        "value": "321145.00",
+        "id": "7500030dffe24844aa467a75f7aedfd1",
+        "should_show_entity": true,
+        "label": "REAL ESTATE"
+    },
+    {
+        "count": "456",
+        "value": "266060.00",
+        "id": "d9c4a26cd671436eac3c501184364fc4",
+        "should_show_entity": false,
+        "label": "MISC BUSINESS"
+    },
+    {
+        "count": "395",
+        "value": "235425.00",
+        "id": "f50cf984a2e3477c8167d32e2b14e052",
+        "should_show_entity": true,
+        "label": "LAWYERS/LAW FIRMS"
+    },
+    {
+        "count": "169",
+        "value": "193175.00",
+        "id": "0af3f418f426497e8bbf916bfc074ebc",
+        "should_show_entity": true,
+        "label": "SECURITIES & INVESTMENT"
+    },
+    {
+        "count": "238",
+        "value": "186810.00",
+        "id": "e5175721aac9406795a1f97cae01e01d",
+        "should_show_entity": true,
+        "label": "BUSINESS SERVICES"
+    },
+    {
+        "count": "240",
+        "value": "183018.00",
+        "id": "05b23aff0dbd4b74b95b3e16074a874c",
+        "should_show_entity": false,
+        "label": "MISC FINANCE"
+    },
+    {
+        "count": "337",
+        "value": "162309.00",
+        "id": "31657d3c187e4cecb670d228d7e674d2",
+        "should_show_entity": true,
+        "label": "EDUCATION"
+    }
+]
+
+var rubioTopContrIndustry = [
+    {
+        "count": "517",
+        "value": "357931.00",
+        "id": "b21467ae32924f84ada9076535401a91",
+        "should_show_entity": false,
+        "label": "RETIRED"
+    },
+    {
+        "count": "141",
+        "value": "195420.00",
+        "id": "0af3f418f426497e8bbf916bfc074ebc",
+        "should_show_entity": true,
+        "label": "SECURITIES & INVESTMENT"
+    },
+    {
+        "count": "117",
+        "value": "147420.00",
+        "id": "7500030dffe24844aa467a75f7aedfd1",
+        "should_show_entity": true,
+        "label": "REAL ESTATE"
+    },
+    {
+        "count": "97",
+        "value": "122420.00",
+        "id": "05b23aff0dbd4b74b95b3e16074a874c",
+        "should_show_entity": false,
+        "label": "MISC FINANCE"
+    },
+    {
+        "count": "89",
+        "value": "103600.00",
+        "id": "8ada0fc2d6994f2ab06c7e025dff2284",
+        "should_show_entity": true,
+        "label": "INSURANCE"
+    },
+    {
+        "count": "241",
+        "value": "102686.00",
+        "id": "767c434bfd1348638bab7f8c12b9282f",
+        "should_show_entity": true,
+        "label": "REPUBLICAN/CONSERVATIVE"
+    },
+    {
+        "count": "52",
+        "value": "86740.00",
+        "id": "042288e0185a44ec82982814c69abdca",
+        "should_show_entity": true,
+        "label": "COMPUTERS/INTERNET"
+    },
+    {
+        "count": "54",
+        "value": "84180.00",
+        "id": "ad689c2a2bf744cc82237f851cd3f2c0",
+        "should_show_entity": true,
+        "label": "GENERAL CONTRACTORS"
+    },
+    {
+        "count": "91",
+        "value": "70377.00",
+        "id": "f50cf984a2e3477c8167d32e2b14e052",
+        "should_show_entity": true,
+        "label": "LAWYERS/LAW FIRMS"
+    },
+    {
+        "count": "53",
+        "value": "64960.00",
+        "id": "165d820dd48441e1befdc47f3fa3d236",
+        "should_show_entity": true,
+        "label": "FOOD & BEVERAGE"
+    }
+]
+
+var grahamTopContrIndustry = [
+    {
+        "count": "461",
+        "value": "644789.00",
+        "id": "0af3f418f426497e8bbf916bfc074ebc",
+        "should_show_entity": true,
+        "label": "SECURITIES & INVESTMENT"
+    },
+    {
+        "count": "664",
+        "value": "584176.00",
+        "id": "f50cf984a2e3477c8167d32e2b14e052",
+        "should_show_entity": true,
+        "label": "LAWYERS/LAW FIRMS"
+    },
+    {
+        "count": "696",
+        "value": "531563.00",
+        "id": "b21467ae32924f84ada9076535401a91",
+        "should_show_entity": false,
+        "label": "RETIRED"
+    },
+    {
+        "count": "351",
+        "value": "410711.00",
+        "id": "7500030dffe24844aa467a75f7aedfd1",
+        "should_show_entity": true,
+        "label": "REAL ESTATE"
+    },
+    {
+        "count": "74",
+        "value": "292000.00",
+        "id": "9162d091922d4bb0a9e02bf0e42915b8",
+        "should_show_entity": true,
+        "label": "LEADERSHIP PACS"
+    },
+    {
+        "count": "204",
+        "value": "279150.00",
+        "id": "bf2cfae020b84fae915ee48e8e15ea87",
+        "should_show_entity": true,
+        "label": "PRO-ISRAEL"
+    },
+    {
+        "count": "117",
+        "value": "167178.00",
+        "id": "13ca840788944cc79b362d068985fc73",
+        "should_show_entity": false,
+        "label": "MISC MANUFACTURING & DISTRIBUTING"
+    },
+    {
+        "count": "159",
+        "value": "161102.00",
+        "id": "e5175721aac9406795a1f97cae01e01d",
+        "should_show_entity": true,
+        "label": "BUSINESS SERVICES"
+    },
+    {
+        "count": "180",
+        "value": "156863.00",
+        "id": "a05a0d06f6814b31bece35a81fcb40c7",
+        "should_show_entity": true,
+        "label": "HEALTH PROFESSIONALS"
+    },
+    {
+        "count": "126",
+        "value": "138750.00",
+        "id": "05b23aff0dbd4b74b95b3e16074a874c",
+        "should_show_entity": false,
+        "label": "MISC FINANCE"
+    }
+]
+
+var jindalTopContrIndustry = [
+    {
+        "count": "110",
+        "value": "236250.00",
+        "id": "0b4aba987b6e4cb5931b8060b40a0c7f",
+        "should_show_entity": true,
+        "label": "HOSPITALS/NURSING HOMES"
+    },
+    {
+        "count": "53",
+        "value": "156650.00",
+        "id": "f50cf984a2e3477c8167d32e2b14e052",
+        "should_show_entity": true,
+        "label": "LAWYERS/LAW FIRMS"
+    },
+    {
+        "count": "132",
+        "value": "73117.00",
+        "id": "a05a0d06f6814b31bece35a81fcb40c7",
+        "should_show_entity": true,
+        "label": "HEALTH PROFESSIONALS"
+    },
+    {
+        "count": "19",
+        "value": "66900.00",
+        "id": "52766c4910a846f2813a1dda212b7027",
+        "should_show_entity": true,
+        "label": "OIL & GAS"
+    },
+    {
+        "count": "8",
+        "value": "34500.00",
+        "id": "1f925e5e3e5d4245a29a725cb2aeff22",
+        "should_show_entity": true,
+        "label": "TELECOM SERVICES & EQUIPMENT"
+    },
+    {
+        "count": "7",
+        "value": "29500.00",
+        "id": "165d820dd48441e1befdc47f3fa3d236",
+        "should_show_entity": true,
+        "label": "FOOD & BEVERAGE"
+    },
+    {
+        "count": "16",
+        "value": "27086.17",
+        "id": "8ada0fc2d6994f2ab06c7e025dff2284",
+        "should_show_entity": true,
+        "label": "INSURANCE"
+    },
+    {
+        "count": "8",
+        "value": "26000.00",
+        "id": "83bece3db3b54ca58b38d3bad679697f",
+        "should_show_entity": true,
+        "label": "AUTOMOTIVE"
+    },
+    {
+        "count": "5",
+        "value": "25000.00",
+        "id": "7a214b1dc0054b768d4c4eb6f8f625c8",
+        "should_show_entity": true,
+        "label": "ACCOUNTANTS"
+    },
+    {
+        "count": "12",
+        "value": "24000.00",
+        "id": "4b732d5c5c4e43d39df21532b7c3be7b",
+        "should_show_entity": true,
+        "label": "HEALTH SERVICES/HMOS"
+    }
+]
+
+
 var makeForceChart = function makeForceChart(candName, obj, valueDivisor, nameColor, circleColor){
   if (candName === 'Trump'){
     console.log('aye nothing for ' + candName);
@@ -556,7 +849,7 @@ $('#candidate-select').on('change', function(e){
       break;
     case 'Santorum': 
       prepChart(val)
-      makeForceChart(val, santorumTopContrIndustry, 10000, palette.royalblue, palette.red);
+      makeForceChart(val, santorumTopContrIndustry, 15000, palette.royalblue, palette.red);
       break;
     case 'Huckabee': 
       prepChart(val)
@@ -564,13 +857,14 @@ $('#candidate-select').on('change', function(e){
       break;   
     case 'Jindal': 
       prepChart(val)
-      makeForceChart(val, jindalTopContrIndustry, 10000, palette.royalblue, palette.red);
+      makeForceChart(val, jindalTopContrIndustry, 5000, palette.royalblue, palette.red);
       break;     
     case 'Rubio': 
       prepChart(val)
       makeForceChart(val, rubioTopContrIndustry, 10000, palette.royalblue, palette.red);
       break; 
     case 'Graham': 
+      prepChart(val)
       makeForceChart(val, grahamTopContrIndustry, 10000, palette.royalblue, palette.red);
       break;         
       }
