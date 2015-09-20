@@ -234,7 +234,8 @@ d3.json('./js/candidates.json', function(error, json){
           break;         
           }
       })
-
+    
+    prepChart('Clinton')
     makeForceChart('Clinton', json.clintonTopContrIndustry, 2500000, palette.royalblue, palette.blue);
 
 });//end pulling in data from candidates.json
