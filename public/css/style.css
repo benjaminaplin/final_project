@@ -3,6 +3,8 @@ body {
 }
 
 h2 {
+  color:#042029
+;
   padding: 5px;
   margin: 5px;
 }
@@ -21,4 +23,8 @@ div.chart{
 
 div.svg{
     position:relative;
+}
+
+div#chart2 {
+  width: 700px;
 }

@@ -22,8 +22,6 @@ var palette = {
       "yellowgreen": "#738A05"
   }
 
-
-// delete
 // candidatesArray.forEach(function(e){
 //  if(e.commId === 'C00575795'|| e.commId === 'C00578658' || e.commId === 'C00577130'){
 //    e.color = 'blue'
@@ -66,20 +64,20 @@ var palette = {
 // })
 
 var candidatesArray = [
-  {'candContr': 0, 'candSpent': 3085615, 'color': 'blue', 'commId': 'C00577130', 'name': "Bernie Sanders", 'receipts': 15247353},
-  {'candContr': 4049, 'candSpent': 1414674, 'color': 'red', 'commId': 'C00580100', 'name': "The Donald", 'receipts': 1902410},
-  {'candContr': 388720, 'candSpent': 3078087, 'color': 'red', 'commId': 'C00579458', 'name': "Jeb Bush", 'receipts': 11429897}, 
-  {'candContr': 0, 'candSpent': 5896929, 'color': 'red', 'commId': 'C00573519', 'name': "Ben Carson", 'receipts': 10642242},
-  {'candContr': 0, 'candSpent': 692768 ,'color': 'blue', 'commId': 'C00578658', 'name': "Martin O'Malley", 'receipts': 2006904},
-  {'candContr': 0, 'candSpent': 2771264, 'color': 'red', 'commId': 'C00575449', 'name': "Rand Paul", 'receipts': 6932779},
-  {'candContr': 0, 'candSpent': 714044 ,'color': 'red', 'commId': 'C00577312', 'name': "Carly Fiorina", 'receipts': 1704703},
-  {'candContr': 278821, 'candSpent': 18699814, 'color': 'blue', 'commId': 'C00575795', 'name': "Hillary Clinton", 'receipts': 47549949},
-  {'candContr': 0, 'candSpent': 5821564, 'color': 'red', 'commId': 'C00574624', 'name': "Ted Cruz", 'receipts': 14349160},
-  {'candContr': 0, 'candSpent': 375598,'color': 'red', 'commId': 'C00578492', 'name': "Rick Santorum", 'receipts': 607617},
-  {'candContr': 0, 'candSpent': 1118991, 'color': 'red', 'commId': 'C00577981', 'name': "Mike Huckabee", 'receipts': 2004462},
-  {'candContr': 0, 'candSpent': 65043, 'color': 'red', 'commId': 'C00580159', 'name': "Bobby Jindal", 'receipts': 578758},
-  {'candContr': 0, 'candSpent': 190536 ,'color': 'red', 'commId': 'C00458844', 'name': "Marco Rubio", 'receipts': 917946},
-  {'candContr': 0, 'candSpent': 1126733, 'color': 'red', 'commId': 'C00578757', 'name': "Linsey Graham", 'receipts': 3709552}
+  {'candContr': 0, 'candSpent': 3085615, 'color': palette.blue, 'commId': 'C00577130', 'name': "Bernie Sanders", 'receipts': 15247353},
+  {'candContr': 4049, 'candSpent': 1414674, 'color': palette.red, 'commId': 'C00580100', 'name': "The Donald", 'receipts': 1902410},
+  {'candContr': 388720, 'candSpent': 3078087, 'color': palette.red, 'commId': 'C00579458', 'name': "Jeb Bush", 'receipts': 11429897}, 
+  {'candContr': 0, 'candSpent': 5896929, 'color': palette.red, 'commId': 'C00573519', 'name': "Ben Carson", 'receipts': 10642242},
+  {'candContr': 0, 'candSpent': 692768 ,'color': palette.blue, 'commId': 'C00578658', 'name': "Martin O'Malley", 'receipts': 2006904},
+  {'candContr': 0, 'candSpent': 2771264, 'color': palette.red, 'commId': 'C00575449', 'name': "Rand Paul", 'receipts': 6932779},
+  {'candContr': 0, 'candSpent': 714044 ,'color': palette.red, 'commId': 'C00577312', 'name': "Carly Fiorina", 'receipts': 1704703},
+  {'candContr': 278821, 'candSpent': 18699814, 'color': palette.blue, 'commId': 'C00575795', 'name': "Hillary Clinton", 'receipts': 47549949},
+  {'candContr': 0, 'candSpent': 5821564, 'color': palette.red, 'commId': 'C00574624', 'name': "Ted Cruz", 'receipts': 14349160},
+  {'candContr': 0, 'candSpent': 375598,'color': palette.red, 'commId': 'C00578492', 'name': "Rick Santorum", 'receipts': 607617},
+  {'candContr': 0, 'candSpent': 1118991, 'color': palette.red, 'commId': 'C00577981', 'name': "Mike Huckabee", 'receipts': 2004462},
+  {'candContr': 0, 'candSpent': 65043, 'color': palette.red, 'commId': 'C00580159', 'name': "Bobby Jindal", 'receipts': 578758},
+  {'candContr': 0, 'candSpent': 190536 ,'color': palette.red, 'commId': 'C00458844', 'name': "Marco Rubio", 'receipts': 917946},
+  {'candContr': 0, 'candSpent': 1126733, 'color': palette.red, 'commId': 'C00578757', 'name': "Linsey Graham", 'receipts': 3709552}
 ]
 //adding sunlight foundation 'transparency ids' to candidate objects
 candidatesArray.forEach(function(e){
