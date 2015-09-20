@@ -8,8 +8,8 @@
     <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-  <link rel="stylesheet" href="../d3/base.css">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/style.css">
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
@@ -20,20 +20,34 @@
   
   <h1>Fundraising By Candidate</h2>
   
-</div>
-
-     
+</div><!--header-->
  <div id="chart"></div><!--chart-->
-<div class="header">
-  
-    <h2>Industry Contributions to Hillary Clinton 2012</h1>
-</div>
-  <div id="chart2">
-  </div><!--chart2-->
+
+  <div class="header">
+      <h2>Industry Contributions to <span id="candidate-name"></span> 2012</h2>
+  </div>
+   
+  <select id="candidate-select">
+    <option value="Sanders">Sanders</option>
+    <option value="Trump">The Donald</option>
+    <option value="Bush">Bush</option>
+    <option value="Carson">Carson</option>
+    <option value="Omalley">Omalley</option>
+    <option value="Paul">Paul</option>
+    <option value="Fiorina">Fiorina</option>
+    <option value="Clinton" selected>Clinton</option>
+    <option value="Cruz">Cruz</option>
+    <option value="Santorum">Santorum</option>
+    <option value="Huckabee">Huckabee</option>
+    <option value="Jindal">Jindal</option>
+    <option value="Rubio">Rubio</option>
+    <option value="Graham">Graham</option>
+
+  </select>
+  <div id="chart2"></div><!--chart2-->
 
   </div><!--container-->
  
- <script  type="text/template" id="main-template"></script> 
  <!--template-->
 <!-- <div id="svg">
   
@@ -41,10 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
   <script src="../backbone/backbone_script.js"></script>
-  <script src="../d3/d3.min.js"></script>
-  <script src="../d3/d3_script_chart1.js"></script>
-  <script src="../d3/d3_script_chart2.js"></script>
-  <script src="../d3/d3_script_chart3.js"></script>
+  <script src="../js/d3.min.js"></script>
+  <script src="../js/d3_script_chart1.js"></script>
+  <script src="../js/d3_script_chart2.js"></script>
+  <script src="../js/d3_script_chart3.js"></script>
 
 
 </body>

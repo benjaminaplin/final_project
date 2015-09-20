@@ -809,6 +809,7 @@ var prepChart = function prepChart(name){
 }
 
 $('#candidate-select').on('change', function(e){
+    console.log('hey there')
   var val = $( "select option:selected").val();
   switch(val){
     case 'Sanders':
