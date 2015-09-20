@@ -1,7 +1,26 @@
-// console.log("dee three linked");
-// // console.log("ben says ", ben)
+console.log("d3 chart1 linked");
+// console.log("ben says ", ben)
 // window.setTimeout(function(){
 
+var palette = {
+      "lightergray": "#D0D0D0",
+      "lightgray": "#819090",
+      "gray": "#708284",
+      "mediumgray": "#536870",
+      "darkgray": "#475B62",
+      "darkblue": "#0A2933",
+      "darkerblue": "#042029",
+      "paleryellow": "#FCF4DC",
+      "paleyellow": "#EAE3CB",
+      "yellow": "#A57706",
+      "orange": "#BD3613",
+      "red": "#D11C24",
+      "pink": "#C61C6F",
+      "purple": "#595AB7",
+      "blue": "#2176C7",
+      "green": "#259286",
+      "yellowgreen": "#738A05"
+  }
 
 // candidatesArray.forEach(function(e){
 //  if(e.commId === 'C00575795'|| e.commId === 'C00578658' || e.commId === 'C00577130'){
@@ -10,7 +29,8 @@
 //    e.color = 'red'
 //   }
 // })
-// // use switch statement here instead
+// adds names to objects received from API, which does not include names 
+// use switch statement here instead
 // candidatesArray.forEach(function(e){
 //   if(e.commId === 'C00575795'){
 //     e.name = 'Hillary Clinton';
@@ -44,27 +64,61 @@
 // })
 
 var candidatesArray = [
-  {'candContr': 0, 'candSpent': 3085615, 'color': 'blue', 'commId': 'C00577130', 'name': "Bernie Sanders", 'receipts': 15247353},
-  {'candContr': 4049, 'candSpent': 1414674, 'color': 'red', 'commId': 'C00580100', 'name': "The Donald", 'receipts': 1902410},
-  {'candContr': 388720, 'candSpent': 3078087, 'color': 'red', 'commId': 'C00579458', 'name': "Jeb Bush", 'receipts': 11429897}, 
-  {'candContr': 0, 'candSpent': 5896929, 'color': 'red', 'commId': 'C00573519', 'name': "Ben Carson", 'receipts': 10642242},
-  {'candContr': 0, 'candSpent': 692768 ,'color': 'blue', 'commId': 'C00578658', 'name': "O'Malley", 'receipts': 2006904},
-  {'candContr': 0, 'candSpent': 2771264, 'color': 'red', 'commId': 'C00575449', 'name': "Rand Paul", 'receipts': 6932779},
-  {'candContr': 0, 'candSpent': 714044 ,'color': 'red', 'commId': 'C00577312', 'name': "Carly Fiorina", 'receipts': 1704703},
-  {'candContr': 278821, 'candSpent': 18699814, 'color': 'blue', 'commId': 'C00575795', 'name': "Hillary Clinton", 'receipts': 47549949},
-  {'candContr': 0, 'candSpent': 5821564, 'color': 'red', 'commId': 'C00574624', 'name': "Ted Cruz", 'receipts': 14349160},
-  {'candContr': 0, 'candSpent': 375598,'color': 'red', 'commId': 'C00578492', 'name': "Rick Santorum", 'receipts': 607617},
-  {'candContr': 0, 'candSpent': 1118991, 'color': 'red', 'commId': 'C00577981', 'name': "Huckabee", 'receipts': 2004462},
-  {'candContr': 0, 'candSpent': 65043, 'color': 'red', 'commId': 'C00580159', 'name': "Bobby Jindal", 'receipts': 578758},
-  {'candContr': 0, 'candSpent': 190536 ,'color': 'red', 'commId': 'C00458844', 'name': "Marco Rubio", 'receipts': 917946},
-  {'candContr': 0, 'candSpent': 1126733, 'color': 'red', 'commId': 'C00578757', 'name': "Linsey Graham", 'receipts': 3709552}
+  {'candContr': 0, 'candSpent': 3085615, 'color': palette.blue, 'commId': 'C00577130', 'name': "Bernie Sanders", 'receipts': 15247353},
+  {'candContr': 4049, 'candSpent': 1414674, 'color': palette.red, 'commId': 'C00580100', 'name': "The Donald", 'receipts': 1902410},
+  {'candContr': 388720, 'candSpent': 3078087, 'color': palette.red, 'commId': 'C00579458', 'name': "Jeb Bush", 'receipts': 11429897}, 
+  {'candContr': 0, 'candSpent': 5896929, 'color': palette.red, 'commId': 'C00573519', 'name': "Ben Carson", 'receipts': 10642242},
+  {'candContr': 0, 'candSpent': 692768 ,'color': palette.blue, 'commId': 'C00578658', 'name': "Martin O'Malley", 'receipts': 2006904},
+  {'candContr': 0, 'candSpent': 2771264, 'color': palette.red, 'commId': 'C00575449', 'name': "Rand Paul", 'receipts': 6932779},
+  {'candContr': 0, 'candSpent': 714044 ,'color': palette.red, 'commId': 'C00577312', 'name': "Carly Fiorina", 'receipts': 1704703},
+  {'candContr': 278821, 'candSpent': 18699814, 'color': palette.blue, 'commId': 'C00575795', 'name': "Hillary Clinton", 'receipts': 47549949},
+  {'candContr': 0, 'candSpent': 5821564, 'color': palette.red, 'commId': 'C00574624', 'name': "Ted Cruz", 'receipts': 14349160},
+  {'candContr': 0, 'candSpent': 375598,'color': palette.red, 'commId': 'C00578492', 'name': "Rick Santorum", 'receipts': 607617},
+  {'candContr': 0, 'candSpent': 1118991, 'color': palette.red, 'commId': 'C00577981', 'name': "Mike Huckabee", 'receipts': 2004462},
+  {'candContr': 0, 'candSpent': 65043, 'color': palette.red, 'commId': 'C00580159', 'name': "Bobby Jindal", 'receipts': 578758},
+  {'candContr': 0, 'candSpent': 190536 ,'color': palette.red, 'commId': 'C00458844', 'name': "Marco Rubio", 'receipts': 917946},
+  {'candContr': 0, 'candSpent': 1126733, 'color': palette.red, 'commId': 'C00578757', 'name': "Linsey Graham", 'receipts': 3709552}
 ]
+//adding sunlight foundation 'transparency ids' to candidate objects
+candidatesArray.forEach(function(e){
+  if(e.commId === 'C00575795'){
+    e.sfId = '597e02e7d1b04d83976913da1b8e2998';
+  } else if (e.commId === 'C00578658') {
+    e.sfId = 'e4355ab3b33140349411de019d9a127c';
+  } else if (e.commId === 'C00577130') {
+    e.sfId = 'd4c558e3d9a747f6bead48799b279be3';
+  } else if (e.commId === 'C00579458') {
+    e.sfId = '794d1fc57fd54ee385531309ea6be14e';
+  } else if (e.commId === 'C00573519') {
+    e.sfId = null;
+  } else if (e.commId === 'C00574624') {
+    e.sfId = '11b86e4675ad46da80a0c00af4f1f66b';
+  } else if (e.commId === 'C00577312') {
+    e.sfId = null;
+  } else if (e.commId === 'C00578757') {
+    e.sfId = '7adf2419ade14af595b4cfa666348e46';
+  } else if (e.commId === 'C00577981') {
+    e.sfId = '52b697851bfc4a82bacaf70ff3a1f532';
+  } else if (e.commId === 'C00580159') {
+    e.sfId = '56883c5c0dde46b9b0ee0892d4524773';
+  } else if (e.commId === 'C00575449') {
+    e.sfId = '1c363e2e6c1d49ab972cb2a084cd92e3';
+  } else if (e.commId === 'C00458844') {
+    e.sfId = 'adc3347820d14b8e9468880e3eb010f6';
+  } else if (e.commId === 'C00578492') {
+    e.sfId = 'f99f7d244bbf4325b31312f75643f8da'
+  } else if (e.commId === 'C00580100'){
+    e.sfId = '4adbdd2658044c73977230f678d4cb47'
+  }
+})
 
+console.log('candidatesArray',  candidatesArray)
+// an array of values of receipts only
 receiptsArray = [];
 candidatesArray.forEach(function(e){
   receiptsArray.push(e.receipts);
 })
-
+//an array of names and reciepts only, for pie chart
 receiptsNamesArray = [];
 candidatesArray.forEach(function(e){
   var newObj = {'label': e.name, 'value':e.receipts};
@@ -79,7 +133,7 @@ var margin = { top: 40, right: 10, bottom:40, left:115}
 
 //have to remove the above margins from the size below
 var height = 550 - margin.top - margin.bottom, 
-    width = 600 - margin.left - margin.right, 
+    width = 700 - margin.left - margin.right, 
     barWidth = 50, 
     barOffset = 5;
 
@@ -102,7 +156,7 @@ var tooltip = d3.select('body').append('div')
 
 //creat chart here
 var myChart = d3.select('#chart').append('svg')
-  .style('background', '#E7E0CB')
+  .style('background', palette.lightergray)
   .attr('width', width + margin.left + margin.right)
   .attr('height', height + margin.top + margin.bottom)
   .append('g')
@@ -127,7 +181,7 @@ var myChart = d3.select('#chart').append('svg')
     tooltip.transition()
       .style('opacity', .9)
 
-    tooltip.html(d.receipts, d.name) 
+    tooltip.html( d.name) 
       .style('left', (d3.event.pageX) + 'px')
       .style('top', (d3.event.pageY) + 'px')
 
@@ -194,60 +248,4 @@ var hGuide = d3.select('svg').append('g')
         .style({ fill: 'none', stroke: "#000"})
     hGuide.selectAll('line')
         .style({ stroke: "#000"})
-
-//-----------------PIE CHART--------------------------
-
-var width = 400,
-    height = 400,
-    radius = 200,
-    //d3 scales below
-    colors = d3.scale.ordinal()
-      .range(['#595AB7','#A57706','#D11C24','#C61C6F','#BD3613','#2176C7','#259286','#738A05']);
-  
-
-pie = d3.layout.pie()
-  .value(function(d){
-    return d.value;
-  })
-//defines inner and outer range of pie chart
-var arc = d3.svg.arc()
-  .outerRadius(radius)
-
-var myChart = d3.select('#chart2').append('svg') 
-  .attr('width', width)
-  .attr('height', height)
-  .append('g') 
-  //by default, graphics are centered at 0,0 so you need to 
-  //transform and translate
-  //set it pu to be width of chart minus radius
-    .attr('transform', 'translate('+(width-radius)+','+(height-radius)+')')
-    //feed it the data here, have to add enter method to make 'path' exist
-    .selectAll('path').data(pie(receiptsNamesArray))
-    .enter().append('g')
-      .attr('class', 'slice')
-
-
-var slices = d3.selectAll('g.slice')
-        .append('path')
-        .attr('fill', function(d, i) {
-            return colors(i);
-        })
-      //pass along arc function that creates outer circle
-        .attr('d', arc)
-
-var text = d3.selectAll('g.slice')
-    .append('text')
-    .text(function(d, i) {
-        return d.data.label;
-    })
-    .attr('text-anchor', 'middle')
-    .attr('fill', 'white')
-    .attr('transform', function(d) {
-        d.innerRadius = 0;
-        d.outerRadius = radius;
-        return 'translate('+ arc.centroid(d)+')'
-    })
-
-// }, 1500)
-
 

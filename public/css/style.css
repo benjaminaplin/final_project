@@ -1,0 +1,30 @@
+body {
+  background:#819090;
+}
+
+h2 {
+  color:#042029
+;
+  padding: 5px;
+  margin: 5px;
+}
+
+div.header{
+  margin: 0 auto;
+}
+
+div.container{
+  margin: 15px;
+}
+
+div.chart{
+  position:relative;
+}
+
+div.svg{
+    position:relative;
+}
+
+div#chart2 {
+  width: 700px;
+}
