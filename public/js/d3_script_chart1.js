@@ -1,6 +1,19 @@
 console.log("d3 chart1 linked");
 // console.log("ben says ", ben)
 // window.setTimeout(function(){
+var candidatesArray = []
+var data;
+d3.json('./js/candidates.json', function(error, json){
+console.log('json', json)
+ //  if (error){
+ //   return console.warn(error);
+ // }
+ //  data = json;
+ //  console.log('data', data)
+  // for (key in data) {
+  //   // candidatesArray.push(data[key])
+  // }
+
 
 var palette = {
       "lightergray": "#D0D0D0",
@@ -112,7 +125,7 @@ candidatesArray.forEach(function(e){
   }
 })
 
-console.log('candidatesArray',  candidatesArray)
+// console.log('candidatesArray',  candidatesArray)
 // an array of values of receipts only
 receiptsArray = [];
 candidatesArray.forEach(function(e){
@@ -150,9 +163,13 @@ var xScale = d3.scale.ordinal()
   .rangeBands([0, width], 0.15) 
 
 var tooltip = d3.select('body').append('div')
+  .attr('class', 'tooltip')
   .style('position', 'absolute')
   .style('padding', ' 0 10px')
-  .style('opacity', 0)      
+  .style('opacity', 0)   
+
+// tooltip.append('div')
+//   .attr('class', 'label')  
 
 //creat chart here
 var myChart = d3.select('#chart').append('svg')
@@ -181,7 +198,7 @@ var myChart = d3.select('#chart').append('svg')
     tooltip.transition()
       .style('opacity', .9)
 
-    tooltip.html( d.name) 
+    tooltip.html(d.name + "<br>" + d.receipts.toLocaleString())
       .style('left', (d3.event.pageX) + 'px')
       .style('top', (d3.event.pageY) + 'px')
 
@@ -211,7 +228,7 @@ myChart.transition()
     })
     .duration(1000)
     .ease('elastic')
-
+console.log('receiptsarray', receiptsArray)
 var vGuideScale = d3.scale.linear()
   .domain([0, d3.max(receiptsArray)])
   .range([height,0])
@@ -231,21 +248,24 @@ var vGuide = d3.select('svg').append('g')
     vGuide.selectAll('line')
         .style({ stroke: "#000"})
 
-var hAxis = d3.svg.axis()
-    //scale created on line 78
-    .scale(xScale)
-    .orient('bottom')
-    .tickValues(xScale.domain().filter(function(d, i) {
-        return receiptsArray.length;
-        // below would place tick every 5 bars
-        // return !(i % (candidatesArray.length/5));
-    }))
+// var hAxis = d3.svg.axis()
+//     //scale created on line 78
+//     .scale(xScale)
+//     .orient('bottom')
+//     .tickValues(xScale.domain().filter(function(d, i) {
+//         return receiptsArray.length;
+//         // below would place tick every 5 bars
+//         // return !(i % (candidatesArray.length/5));
+//     }))
 
 var hGuide = d3.select('svg').append('g')
-    hAxis(hGuide)
+    // hAxis(hGuide)
     hGuide.attr('transform', 'translate(' + margin.left + ', ' + (height + margin.top) + ')')
     hGuide.selectAll('path')
         .style({ fill: 'none', stroke: "#000"})
     hGuide.selectAll('line')
         .style({ stroke: "#000"})
+
+
+  });//end pulling in data from candidates.json
 

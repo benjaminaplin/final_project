@@ -28,3 +28,11 @@ div.svg{
 div#chart2 {
   width: 700px;
 }
+/*tooltip*/
+/*div.tooltip {
+    background: lightblue;
+    border:solid gray;
+    position: absolute;
+    max-width: 8em;
+    text-align:center;
+}*/
