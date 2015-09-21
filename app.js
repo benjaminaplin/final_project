@@ -26,8 +26,8 @@ var methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 //config
-app.listen(3000, function() {
-  console.log("I'm listening for totally ridic politics on 3000!");
+app.listen(80, function() {
+  console.log("I'm listening for totally ridic politics on 80!");
 });
 
 app.get('/', function(req,res){
