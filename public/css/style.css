@@ -28,22 +28,7 @@ div.svg{
 div#chart2 {
   width: 700px;
 }
-/*tooltip*/
-/*div.tooltip {
-    background: lightblue;
-    border:solid gray;
+div.tooltip {
     position: absolute;
-    max-width: 8em;
-    text-align:center;
-}*/
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
+    background-color:rgba(0, 0, 0, 0.5);
 }
