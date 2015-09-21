@@ -20,8 +20,9 @@ var methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 //config
-app.listen(80, function() {
-  console.log("I'm listening for politics on 80!");
+var port = process.env.PORT ||  3000
+app.listen(port, function() {
+  console.log("I'm listening on 3000!");
 });
 
 app.get('/', function(req,res){
