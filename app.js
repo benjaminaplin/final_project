@@ -1,7 +1,6 @@
 //dependencies
 var express = require('express');
 var path = require('path');
-var bodyParser = require('body-parser');
 var fs = require("fs");
 var ejs = require("ejs");
 var app = express();
@@ -19,15 +18,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.locals.appdata = require('./data.json');
 //middleware
-var bodyParser = require('body-parser');
-var urlencodedBodyParser = bodyParser.urlencoded({extended: false});
-app.use(urlencodedBodyParser);
 var methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 //config
 app.listen(80, function() {
-  console.log("I'm listening for totally ridic politics on 80!");
+  console.log("I'm listening for politics on 80!");
 });
 
 app.get('/', function(req,res){
