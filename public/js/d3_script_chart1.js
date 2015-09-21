@@ -1,28 +1,27 @@
-console.log("d3 chart1 linked");
+console.log("d3 chart1.js LINKED");
 // console.log("ben says ", ben)
 // window.setTimeout(function(){
 var candidatesArray = []
 
-
-  var palette = {
-        "lightergray": "#D0D0D0",
-        "lightgray": "#819090",
-        "gray": "#708284",
-        "mediumgray": "#536870",
-        "darkgray": "#475B62",
-        "darkblue": "#0A2933",
-        "darkerblue": "#042029",
-        "paleryellow": "#FCF4DC",
-        "paleyellow": "#EAE3CB",
-        "yellow": "#A57706",
-        "orange": "#BD3613",
-        "red": "#D11C24",
-        "pink": "#C61C6F",
-        "purple": "#595AB7",
-        "blue": "#2176C7",
-        "green": "#259286",
-        "yellowgreen": "#738A05"
-    }
+var palette = {
+    "lightergray": "#D0D0D0",
+    "lightgray": "#819090",
+    "gray": "#708284",
+    "mediumgray": "#536870",
+    "darkgray": "#475B62",
+    "darkblue": "#0A2933",
+    "darkerblue": "#042029",
+    "paleryellow": "#FCF4DC",
+    "paleyellow": "#EAE3CB",
+    "yellow": "#A57706",
+    "orange": "#BD3613",
+    "red": "#D11C24",
+    "pink": "#C61C6F",
+    "purple": "#595AB7",
+    "blue": "#2176C7",
+    "green": "#259286",
+    "yellowgreen": "#738A05"
+  }
 //NEED IF USING API
   // candidatesArray.forEach(function(e){
   //  if(e.commId === 'C00575795'|| e.commId === 'C00578658' || e.commId === 'C00577130'){
@@ -131,10 +130,6 @@ var candidatesArray = []
     receiptsNamesArray.push(newObj);
   })
 
-  receiptsArray.sort(function compaireNumbers(a,b){
-    return a -b;
-  });
-
   var margin = { top: 40, right: 10, bottom:40, left:115}
 
   //have to remove the above margins from the size below
@@ -147,26 +142,24 @@ var candidatesArray = []
   //for mouseover    
 
   var yScale = d3.scale.linear()
-    .domain([0, d3.max(receiptsArray)])
+    .domain(d3.range(0, candidatesArray.length))
     .range([0, height]) 
 
+ // .domain(d3.range(candidatesArray.length))
+//     // ["A", "B", "C", "D", "E", "F", "f", "g", "h", "i", "j", "k", "l", "m", "n"]
 
-
-var xScale = d3.scale.ordinal()
-        .domain(d3.range(0, candidatesArray.length))
-
-    // .domain(d3.range(candidatesArray.length))
-    // ["A", "B", "C", "D", "E", "F", "f", "g", "h", "i", "j", "k", "l", "m", "n"]
-    //second integer argument is space btw bars
+  var xScale = d3.scale.ordinal()
+    .domain(candidatesArray.map(function(d){
+      return d.name;
+    }))
     .rangeBands([0, width], 0.15) 
-
   var tooltip = d3.select('body').append('div')
     .attr('class', 'tooltip')
     .style('position', 'absolute')
     .style('padding', ' 0 10px')
     .style('opacity', 0)   
 
-  //creat chart here
+  //create chart here
   var myChart = d3.select('#chart').append('svg')
     .style('background', palette.lightergray)
     .attr('width', width + margin.left + margin.right)
@@ -177,26 +170,19 @@ var xScale = d3.scale.ordinal()
     .enter().append('rect')
       .attr('width', xScale.rangeBand())
       .attr('x', function(d,i){
-        return xScale(i);
+        return xScale(d.name);
       })
       .attr('height', 0)
       .attr('y', height)
       .attr("fill", function(d){
           return d.color;
        })
-      .text(function(d){
-          return d.name
-      })
-  //EVENTS    
     .on('mouseover', function(d){
-
       tooltip.transition()
         .style('opacity', .9)
-
       tooltip.html(d.name + "<br>" + d.receipts.toLocaleString())
         .style('left', (d3.event.pageX) + 'px')
         .style('top', (d3.event.pageY) + 'px')
-
       tempColor = this.style.fill;
       d3.select(this)
         .style('opacity', .5)
@@ -207,7 +193,6 @@ var xScale = d3.scale.ordinal()
         .style('opacity', 1)
         .style('fill', tempColor)
     })   
-  //
 
   myChart.transition()
       .attr('height', function(d){
@@ -223,7 +208,8 @@ var xScale = d3.scale.ordinal()
       })
       .duration(1000)
       .ease('elastic')
-  console.log('receiptsarray', receiptsArray)
+
+  // console.log('receiptsarray', receiptsArray)
   var vGuideScale = d3.scale.linear()
     .domain([0, d3.max(receiptsArray)])
     .range([height,0])
@@ -243,13 +229,10 @@ var xScale = d3.scale.ordinal()
       vGuide.selectAll('line')
           .style({ stroke: "#000"})
 
-
 var hAxis = d3.svg.axis()
     .scale(xScale)
     .orient('bottom')
-    .tickValues(xScale.domain().filter(function(d, i) {
-        return !(i % (candidatesArray.length/5));
-    }))
+    .tickValues(namesArray)
 
 var hGuide = d3.select('svg').append('g')
     hAxis(hGuide)
@@ -259,5 +242,21 @@ var hGuide = d3.select('svg').append('g')
     hGuide.selectAll('line')
         .style({ stroke: "#000"})
 
+// myChart.append("g")
+//     .attr("class", "x axis")
+//     .attr("transform", "translate(0," + height + ")")
+//     .call(hAxis)
+//   .selectAll("text")
+//     .attr("transform", "rotate(90)")
+//     .attr("x", width / 2)
+//     .attr("y", margin.bottom - 10)
+//     .attr("dy", ".71em")
+//     .style("text-anchor", "end")
+//     .text("XAxis")
 
+// chart title
+// myChart.append("text")
+//   .text("Bar Chart")
+//   .attr("x", width / 2)
+//   .attr("class","title");
 

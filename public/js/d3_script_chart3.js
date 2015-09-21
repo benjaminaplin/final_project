@@ -1,4 +1,4 @@
-console.log('d3 script chart 3 linked')
+console.log('chart3.js linked')
 var palette = {
       "lightergray": "#D0D0D0",
       "lightgray": "#819090",
@@ -165,7 +165,7 @@ d3.json('./js/candidates.json', function(error, json){
     }//end make chart function
 
     var prepChart = function prepChart(name){
-          console.log('you called prepchart w value ' + name)
+          // console.log('you called prepchart w value ' + name)
           $('#chart2').empty()
           $('#candidate-name').text(name)
     }

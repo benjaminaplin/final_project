@@ -8,7 +8,6 @@ var app = express();
 var request = require('request');
 var rp = require('request-promise');
 
-//global variables
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

@@ -36,3 +36,14 @@ div#chart2 {
     max-width: 8em;
     text-align:center;
 }*/
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
