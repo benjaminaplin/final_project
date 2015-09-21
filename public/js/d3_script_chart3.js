@@ -5,11 +5,9 @@ var palette = {
       "gray": "#708284",
       "mediumgray": "#536870",
       "darkgray": "#475B62",
-
       "darkblue": "#0A2933",
       "royalblue": "#16174f",
       "darkerblue": "#042029",
-
       "paleryellow": "#FCF4DC",
       "paleyellow": "#EAE3CB",
       "yellow": "#A57706",
