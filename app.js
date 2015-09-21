@@ -7,6 +7,11 @@ var ejs = require("ejs");
 var app = express();
 var request = require('request');
 var rp = require('request-promise');
+var favicon = require('serve-favicon');
+
+app.use(favicon(__dirname + '/public/favicon.ico'));
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
