@@ -117,7 +117,6 @@ var palette = {
     var name = e.name;
     namesArray.push(name);
   })
-  // console.log('candidatesArray',  candidatesArray)
   // an array of values of receipts only
   receiptsArray = [];
   candidatesArray.forEach(function(e){
@@ -130,29 +129,26 @@ var palette = {
     receiptsNamesArray.push(newObj);
   })
 
-  var margin = { top: 40, right: 10, bottom:40, left:115}
+  var margin = { top: 60, right: 75, bottom:125, left:115}
 
   //have to remove the above margins from the size below
-  var height = 550 - margin.top - margin.bottom, 
+  var height = 665 - margin.top - margin.bottom, 
       width = 700 - margin.left - margin.right, 
       barWidth = 50, 
       barOffset = 5;
 
   var tempColor;
-  //for mouseover    
 
   var yScale = d3.scale.linear()
     .domain(d3.range(0, candidatesArray.length))
     .range([0, height]) 
-
- // .domain(d3.range(candidatesArray.length))
-//     // ["A", "B", "C", "D", "E", "F", "f", "g", "h", "i", "j", "k", "l", "m", "n"]
 
   var xScale = d3.scale.ordinal()
     .domain(candidatesArray.map(function(d){
       return d.name;
     }))
     .rangeBands([0, width], 0.15) 
+
   var tooltip = d3.select('body').append('div')
     .attr('class', 'tooltip')
     .style('position', 'absolute')
@@ -197,7 +193,7 @@ var palette = {
   myChart.transition()
       .attr('height', function(d){
             return d.receipts/100000
-          })
+      })
       .attr('y', function(d){
         return height - d.receipts/100000;
         //height - d positions columns from bottom up
@@ -242,21 +238,19 @@ var hGuide = d3.select('svg').append('g')
     hGuide.selectAll('line')
         .style({ stroke: "#000"})
 
-myChart.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(hAxis)
-  .selectAll("text")
-    .attr("transform", "rotate(90)")
-    .attr("x", width / 2)
-    .attr("y", margin.bottom - 10)
-    .attr("dy", ".71em")
-    .style("text-anchor", "end")
-    .text("XAxis")
+$('svg g:nth-child(3) g.tick text').attr('class', 'rotate')
 
-// chart title
-// myChart.append("text")
-//   .text("Bar Chart")
-//   .attr("x", width / 2)
-//   .attr("class","title");
+d3.selectAll(".rotate")
+    // .attr("x", width / 2)
+    // .attr("y", margin.bottom - 10)
+    // .attr("dy", ".71em")
+    .attr("transform", "rotate(45)")
+    .style("text-anchor", "start")
+
+// myChart.append("g")
+//     .attr("class", "ahawawea")
+//     .attr("transform", "translate(0," + height + ")")
+//     .call(hAxis)
+//   .selectAll("text")
+
 
