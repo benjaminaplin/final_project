@@ -176,7 +176,7 @@ var palette = {
     .on('mouseover', function(d){
       tooltip.transition()
         .style('opacity', .9)
-      tooltip.html(d.name + "<br>" + d.receipts.toLocaleString())
+      tooltip.html(d.name + "<br>raised: " + d.receipts.toLocaleString() + "<br>contributed: " + d.candContr.toLocaleString() + "<br>spent: " + d.candSpent.toLocaleString())
         .style('left', (d3.event.pageX) + 'px')
         .style('top', (d3.event.pageY) + 'px')
       tempColor = this.style.fill;
@@ -241,16 +241,8 @@ var hGuide = d3.select('svg').append('g')
 $('svg g:nth-child(3) g.tick text').attr('class', 'rotate')
 
 d3.selectAll(".rotate")
-    // .attr("x", width / 2)
-    // .attr("y", margin.bottom - 10)
-    // .attr("dy", ".71em")
     .attr("transform", "rotate(45)")
     .style("text-anchor", "start")
 
-// myChart.append("g")
-//     .attr("class", "ahawawea")
-//     .attr("transform", "translate(0," + height + ")")
-//     .call(hAxis)
-//   .selectAll("text")
 
 
