@@ -140,7 +140,9 @@ var palette = {
   var tempColor;
 
   var yScale = d3.scale.linear()
+  //domain is original set of values we work with
     .domain(d3.range(0, candidatesArray.length))
+  //range is how we are going to remap them  
     .range([0, height]) 
 
   var xScale = d3.scale.ordinal()
@@ -152,7 +154,7 @@ var palette = {
   var tooltip = d3.select('body').append('div')
     .attr('class', 'tooltip')
     .style('position', 'absolute')
-    .style('padding', ' 0 10px')
+    .style('padding', ' 5pxl 10px')
     .style('opacity', 0)   
 
   //create chart here
@@ -177,18 +179,21 @@ var palette = {
       tooltip.transition()
         .style('opacity', .9)
       tooltip.html(d.name + "<br>raised: " + d.receipts.toLocaleString() + "<br>contributed: " + d.candContr.toLocaleString() + "<br>spent: " + d.candSpent.toLocaleString())
-        .style('left', (d3.event.pageX) + 'px')
-        .style('top', (d3.event.pageY) + 'px')
+        .style('left', (d3.event.pageX - 50) + 'px')
+        .style('top', (d3.event.pageY - 100) + 'px')
       tempColor = this.style.fill;
       d3.select(this)
         .style('opacity', .5)
         .style('fill', 'grey')
     })
     .on('mouseout', function(d){
+      // tooltip.transition()
+      //   .style('opacity', 0)
       d3.select(this)
         .style('opacity', 1)
         .style('fill', tempColor)
     })   
+
 
   myChart.transition()
       .attr('height', function(d){
