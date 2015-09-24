@@ -1,23 +1,21 @@
 body {
-  background:#819090;
+  background:#FFFFFF;
 }
 
 h1 {
-    padding: 5px;
-  margin: 5px;
-}
-h2 {
+  font-family: 'Lato', sans-serif;
   padding: 5px;
   margin: 5px;
 }
-
 h2 {
+  font-family: 'Lato', sans-serif;
+  padding: 5px;
+  margin: 5px;
   color:#042029;
-  padding: 5px;
-  margin: 5px;
 }
 
 h4 {
+  font-family: 'Lato', sans-serif;  
   color: #042029;
   padding: 5px;
   margin: 5px;
@@ -38,6 +36,7 @@ div.chart{
 
 div.svg{
     position:relative;
+    border-radius: 15px
 }
 
 div#chart2 {
@@ -45,10 +44,20 @@ div#chart2 {
 }
 div.tooltip {
   color: black;
-    position: absolute;
-    background-color:rgba(0, 0, 0, 0.25);
+  position: absolute;
+  background-color:rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+svg {
+  border-radius: 7px;
 }
 
 select#candidate-select {
   margin-bottom: 5px;
+}
+
+text {
+  font-family: 'Lato', sans-serif;
 }
