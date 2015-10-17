@@ -31,8 +31,6 @@ d3.json('./js/candidates.json', function(error, json){
 
         var circleWidth;
 
-
-
         var nodes = [
               { name: candName},
               { name: obj[0].label, target: [0]},
