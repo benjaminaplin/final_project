@@ -165,7 +165,7 @@ setTimeout(function(){
       .attr("transform", "rotate(45)")
       .style("text-anchor", "start")
 
-}, 500);      
+}, 750);      
 
 
 
