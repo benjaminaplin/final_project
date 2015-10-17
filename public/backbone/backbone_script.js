@@ -30,34 +30,33 @@
 //   // {'name':'walker','candId': 'P60006046', 'commId': 'C00580480'}
 // ]
 
-// candidates.forEach(function(e){
-//   debugger
-//   var commId = e.commId;
-//   $.ajax({
-//     url: 'https://api.open.fec.gov/v1/committee/' + commId + '/totals/?api_key=vEAnpDMm3fLd0ZT4eVb2ULbrVlOJ4XvQA50txDkG&page=1&per_page=20&sort_nulls_large=true&sort=-cycle',
-//     method: 'GET',
-//     dataType: 'json',
-//     success: function(data) {
+candidates.forEach(function(e){
+  var commId = e.commId;
+  $.ajax({
+    url: 'https://api.open.fec.gov/v1/committee/' + commId + '/totals/?api_key=vEAnpDMm3fLd0ZT4eVb2ULbrVlOJ4XvQA50txDkG&page=1&per_page=20&sort_nulls_large=true&sort=-cycle',
+    method: 'GET',
+    dataType: 'json',
+    success: function(data) {
 
-//       var Candidate = function Card(receipts, commId, candContr, candSpent){
-//         receipts = data.results[0].receipts,
-//         commId = data.results[0].committee_id,
-//         candContr = data.results[0].candidate_contribution,
-//         candSpent = data.results[0].disbursements
-//       }
+      var Candidate = function Card(receipts, commId, candContr, candSpent){
+        receipts = data.results[0].receipts,
+        commId = data.results[0].committee_id,
+        candContr = data.results[0].candidate_contribution,
+        candSpent = data.results[0].disbursements
+      }
         
-//       var newCandidate = new Candidate();
+      var newCandidate = new Candidate();
 
-//       candidatesArray.push(newCandidate);
-//     },
-//     error: function(error) {
-//       console.log(error);
-//       console.log('err')
-//     }
-//    })//$ajax
-// })//loop
+      candidatesArray.push(newCandidate);
+    },
+    error: function(error) {
+      console.log(error);
+      console.log('err')
+    }
+   })//$ajax
+})//lop
 
-// console.log(candidatesArray);
+console.log(candidatesArray);
 
-// var ben = "hello"
+var ben = "hello"
 
